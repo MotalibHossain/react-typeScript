@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import type { Product } from "../types/product";
 
-const ProductCard = ({ product }) => {
+type Props = {
+    product: Product;
+};
+
+const ProductCard = ({ product }: Props) => {
     const [quantity, setQuantity] = useState(0);
 
     return (
