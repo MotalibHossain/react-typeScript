@@ -5,7 +5,7 @@ type Props = {
     product: Product;
 };
 
-const ProductCard = ({ product }: Props) => {
+const ProductCard: React.FC<Props> = ({ product }: Props) => {
     const [quantity, setQuantity] = useState(0);
 
     return (
@@ -222,23 +222,9 @@ const ProductCard = ({ product }: Props) => {
                                 letterSpacing: "-0.01em",
                             }}
                         >
-                            {product.price?.toLocaleString() || "2,500"}
+                            {product.price?.toLocaleString()}
                         </span>
                     </div>
-
-                    {product.originalPrice && (
-                        <span
-                            className="text-[14px] leading-[16px] text-right line-through"
-                            style={{
-                                fontFamily: "Murecho",
-                                fontWeight: 400,
-                                color: "#77818C",
-                                letterSpacing: "-0.01em",
-                            }}
-                        >
-                            ৳ {product.originalPrice?.toLocaleString()}
-                        </span>
-                    )}
                 </div>
             </div>
         </div>
